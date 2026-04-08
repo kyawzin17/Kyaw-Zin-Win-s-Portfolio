@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --bg: #000000;
+  --soft: #081315;
+  --card: rgba(0, 0, 0, 0.4);
+
+  --border: rgba(255, 255, 255, 0.05);
+
+  /* Brand Colors */
+  --primary: #8AE133;   /* #B1F84D, #22CD36 */
+  --secondary: #8A4FFF; /* Royal Purple */
+  --accent: #17cbe2;
+  
+  /* Text */
+  --main: #E2E8F0;
+  --muted: #94A3B8;
+
+  /* Interaction */
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+
+  /* Gradients */
+  --text-bg: linear-gradient(to right, #8AE133, #B1F84D, #22CD36);
+  --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  /* Typography */
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-soft: var(--soft);
+  --color-card: var(--card);
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --color-main: var(--main);
+  --color-muted: var(--muted);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
+    --text-p: clamp(1rem, 0.5vw + 1rem, 1.125rem);      
+    --text-small: clamp(0.875rem, 0.25vw + 0.875rem, 1rem); 
+}
+/* clamp(min, preferred, max)
+ 40px -> 72px
+ 32px -> 56px
+ 28px -> 44px
+ 24px -> 32px
+ 20px -> 24px
+ 16px -> 18px
+ 16px -> 18px
+ 14px -> 16px */
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+}
+h3 {
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.75rem);
+}
+h4 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+h5 {
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+}
+h6 {
+  font-size: clamp(1rem, 1vw + 1rem, 1.125rem);
+}
+ 
