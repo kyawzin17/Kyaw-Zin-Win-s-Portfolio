@@ -2,11 +2,13 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 
 export default function App() {
 
   return (
-    <div className="w-full min-h-screen bg-[#020617] relative">
+    <div className="w-full min-h-screen bg-bg relative">
       {/* Background Circuit Pattern (SVG) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" className="stroke-slate-700">
@@ -23,6 +25,8 @@ export default function App() {
         <Home />
         <About />
         <Skills />
+        <Contact />
+        <Footer />
       </main>
     </div>
   )

@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
 
 const Header: React.FC = () => {
 
-    const [ active, setActive ]= useState("home");
     const navArray= [
         {id: "home", name: "Home"},
         {id: "about", name: "About"},
@@ -15,7 +13,7 @@ const Header: React.FC = () => {
         <h6 className='justify-self-start text-main font-bold font-serif leading-1.5'>Portfolio!</h6>
         <ul className="justify-self-end flex space-x-6 md:space-x-8 relative">
             { navArray.map((item) => (
-                <li onClick={() => setActive(item.id)} key={item.id}>
+                <li key={item.id}>
                     <a href={`#${item.id}`} className="text-main hover:text-primary transition-colors">
                       <h6 className='font-regular font-serif'>
                         {item.name}

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Palette, FileCode2, Cpu, Zap } from 'lucide-react';
-import Html from "../assets/html.png";
-import Figma from "../assets/figma.png";
-import Css from "../assets/csss.png";
-import Js from "../assets/javascript.png";
-import Reactjs from '../assets/react.png';
-import Tailwind from "../assets/tailwindCss.webp";
-import BootStrap from "../assets/bootstrap.png";
-import TypeScript from "../assets/typeScript.png";
+import Html from "../../public/images/html.webp";
+import Figma from "../../public/images/figma.webp";
+import Css from "../../public/images/csss.webp";
+import Js from "../../public/images/javascript.webp";
+import Reactjs from "../../public/images/react.webp";
+import Tailwind from "../../public/images/tailwindCss.webp";
+import BootStrap from "../../public/images/bootstrap.webp";
+import TypeScript from "../../public/images/typeScript.webp";
 import CircleSkillBadge from './SkillBadge';
 import "./component.css";
 
@@ -16,7 +16,7 @@ import "./component.css";
 type TechId = 'html' | 'css' | 'js' | 'all' | null;
 
 interface SkillArray {
-  name: String;
+  name: string;
   iconUrl: string;
   glowColor: string;
   style: string;

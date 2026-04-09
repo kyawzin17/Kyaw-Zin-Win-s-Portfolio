@@ -1,12 +1,12 @@
 import React from 'react';
 import Svgimg  from "../assets/Circle-svg.svg";
-import Myphoto from "../assets/myPortfolioPicture.png";
+import Myphoto from "../../public/images/myPortfolioPicture.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faFacebook, faTelegram, faViber } from '@fortawesome/free-brands-svg-icons';
 
 const Home: React.FC = () => {
   return (
-    <section className='w-full h-auto px-6 py-18 md:py-8 relative' id='home'>
+    <section className='w-full h-auto px-6 py-18 md:py-8 relative overflow-hidden' id='home'>
         <div className='absolute top-0 -left-1 opacity-50 bg-tl bg-cover h-70 w-60 bg-[url(././assets/Union.svg)]'></div>
         <div className='absolute bottom-[25%] -left-1 opacity-75 bg-contain bg-no-repeat h-30 w-40 bg-[url(././assets/docEffect.svg)]'></div>
          <div className='absolute bottom-[30%] left-[50%] opacity-75 bg-contain bg-no-repeat h-30 w-40 bg-[url(././assets/docEffect.svg)]'></div>
@@ -26,16 +26,24 @@ const Home: React.FC = () => {
 
               <div className='max-w-80 h-auto py-1 flex justify-center gap-2 mt-4'>
                 <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
-                  <FontAwesomeIcon icon={faGithub} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#f21b24]' />
+                  <a href="https://github.com/kyawzin17" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faGithub} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#f21b24]' />
+                  </a>
                 </button>
                 <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
-                  <FontAwesomeIcon icon={faFacebook} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#3b569d]' />
+                  <a href="https://facebook.com/reddragon1766" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faFacebook} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#3b569d]' />
+                  </a>
                 </button>
                 <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
-                  <FontAwesomeIcon icon={faTelegram} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#007bff]' />
+                  <a href="https://t.me/@kyawzinwinei" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faTelegram} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#007bff]' />
+                  </a>
                 </button>
                 <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
-                  <FontAwesomeIcon icon={faViber} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#665ca7]' />
+                  <a href="viber://chat?number=%2B959674114295" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faViber} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#665ca7]' />
+                  </a>
                 </button>
               </div>
             </div>
