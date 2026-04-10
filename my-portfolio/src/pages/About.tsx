@@ -1,7 +1,13 @@
+import { forwardRef } from "react";
 import Me from "../../public/images/me.webp";
-const About: React.FC = () => {
+
+interface AboutProp {
+  id: string;
+}
+
+const About= forwardRef<HTMLElement, AboutProp>(({id},ref) => {
   return (
-         <section className='w-full relative min-h-[80vh] px-6 py-18 overflow-hidden md:py-16'>
+         <section ref={ref} id={id} className='w-full relative min-h-[80vh] px-6 py-18 overflow-hidden md:py-16'>
             <div className='absolute top-[30%] -left-1 bg-contain bg-no-repeat h-40 w-[10%] bg-[url(././assets/circuit.svg)]'></div>
             <div className='absolute top-[50%] -left-1 bg-contain bg-no-repeat h-40 w-[10%] bg-[url(././assets/circuit.svg)]'></div>
             <div className='absolute top-0 -right-1 bg-contain bg-no-repeat h-40 w-[10%] bg-[url(././assets/circuit.svg)] rotate-[180deg]'></div>
@@ -25,5 +31,6 @@ const About: React.FC = () => {
             </div>
           </div>
         </section>
-  )}
+  )
+})
   export default About;

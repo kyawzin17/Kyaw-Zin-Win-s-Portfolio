@@ -1,5 +1,12 @@
+import { useAppContext } from "../hooks/useAppContext";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  scrollToSection: (id: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({scrollToSection}) => {
+
+  const { active }= useAppContext();
 
     const navArray= [
         {id: "home", name: "Home"},
@@ -13,12 +20,11 @@ const Header: React.FC = () => {
         <h6 className='justify-self-start text-main font-bold font-serif leading-1.5'>Portfolio!</h6>
         <ul className="justify-self-end flex space-x-6 md:space-x-8 relative">
             { navArray.map((item) => (
-                <li key={item.id}>
-                    <a href={`#${item.id}`} className="text-main hover:text-primary transition-colors">
-                      <h6 className='font-regular font-serif'>
+                <li key={item.id} 
+                  onClick={() => scrollToSection(item.id)}>
+                      <h6 className={`${active === item.id ? "text-primary" : "text-main" } hover:text-primary transition-colors font-regular font-serif`}>
                         {item.name}
                       </h6>
-                    </a>
                 </li>
             ))}
         </ul>

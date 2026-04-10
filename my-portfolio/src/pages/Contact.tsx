@@ -1,19 +1,16 @@
-import React, { useRef, useState } from "react";
-// import type { FormEvent } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTelegram, faFacebook, faViber } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from "react-hot-toast";
 
-// SectionRef အတွက် Type သတ်မှတ်ချက်
-// interface ContactProps {
-//     sectionRef: React.MutableRefObject<{ [key: string]: HTMLElement | null }>;
-// }
+interface ContactProps {
+    id: string;
+};
 
-export default function Contact() {
-    //{ sectionRef }: ContactProps
-    // HTMLFormElement အတွက် Ref ဖြစ်ကြောင်း သတ်မှတ်ပေးရမယ်
+const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
+
     const form = useRef<HTMLFormElement>(null);
 
     const publicKey = import.meta.env.VITE_PUBLIC_KEY || '';
@@ -70,10 +67,7 @@ export default function Contact() {
 
     return (
         <section 
-            // ref={(el) => { 
-            //     if (sectionRef.current) sectionRef.current["contact"] = el; 
-            // }} 
-            id="contact" 
+            id={id} ref={ref}
             className="w-full h-auto py-12 px-6 overflow-hidden"
         >
            <div className="max-w-250 h-auto mx-auto relative">
@@ -251,4 +245,6 @@ export default function Contact() {
            </div>
         </section>
     );
-}
+})
+
+export default Contact;

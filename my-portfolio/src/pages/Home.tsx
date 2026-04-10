@@ -1,12 +1,16 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import Svgimg  from "../assets/Circle-svg.svg";
 import Myphoto from "../../public/images/myPortfolioPicture.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faFacebook, faTelegram, faViber } from '@fortawesome/free-brands-svg-icons';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  id: string;
+}
+
+const Home= forwardRef<HTMLElement, HomeProps>(({id}, ref) => {
   return (
-    <section className='w-full h-auto px-6 py-18 md:py-8 relative overflow-hidden' id='home'>
+    <section id={id} ref={ref} className='w-full h-auto px-6 py-18 md:py-8 relative overflow-hidden'>
         <div className='absolute top-0 -left-1 opacity-50 bg-tl bg-cover h-70 w-60 bg-[url(././assets/Union.svg)]'></div>
         <div className='absolute bottom-[25%] -left-1 opacity-75 bg-contain bg-no-repeat h-30 w-40 bg-[url(././assets/docEffect.svg)]'></div>
          <div className='absolute bottom-[30%] left-[50%] opacity-75 bg-contain bg-no-repeat h-30 w-40 bg-[url(././assets/docEffect.svg)]'></div>
@@ -58,5 +62,5 @@ const Home: React.FC = () => {
           </div>
         </section>
   );
-}
+});
 export default Home;
