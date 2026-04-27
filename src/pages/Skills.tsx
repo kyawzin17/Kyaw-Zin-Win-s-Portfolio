@@ -1,4 +1,3 @@
-import ProjectSection from "../components/Project";
 import TechTree from "../components/TechTree";
 import { forwardRef } from "react";
 
@@ -11,7 +10,6 @@ const Skills= forwardRef<HTMLElement, SkillsProps>(({id},ref) => {
     return (
         <section ref={ref} id={id} className="w-full min-h-[80vh] px-8 py-18: py-8 relative overflow-hidden">
             <TechTree />
-            <ProjectSection />
         </section>
     )
 })

@@ -1,4 +1,8 @@
 import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -7,8 +11,8 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import { useAppContext } from "./hooks/useAppContext";
+import ProjectSection from "./pages/Project";
 
-// const sections = ['home', 'about', 'skills', 'contact'];
 export default function App() {
 
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -25,7 +29,6 @@ export default function App() {
         });
       },
       { 
-        threshold: 0.1,
         rootMargin: '100px 0px -70% 0px',
       }
     );
@@ -41,9 +44,35 @@ export default function App() {
   const scrollToSection = (id: string) => {
     sectionRefs.current[id]?.scrollIntoView({ behavior: 'smooth' });
   };
+  const scrollViews = (item: string) => {
+    useEffect(() => {
+      const ctx = gsap.context(() => {
+      // CTA Section Animation
+      gsap.from(sectionRefs.current[item],{
+        scrollTrigger: {
+          trigger: sectionRefs.current[item],
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+        opacity: 0,
+        y: 70,
+        scale: 0.95,
+        duration: 0.8,
+        ease: 'power3.out',
+      });
+    });
+      return () => ctx.revert();
+  }, []);
+  }
 
+  scrollViews('home');
+  scrollViews('about');
+  scrollViews('skills');
+  scrollViews('contact');
+  
+ 
   return (
-    <div className="w-full min-h-screen bg-bg relative">
+    <div className="w-full h-auto bg-bg relative">
       {/* Background Circuit Pattern (SVG) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" className="stroke-slate-700">
@@ -57,9 +86,10 @@ export default function App() {
 
       <Header scrollToSection={scrollToSection} />
       <main className="w-full">
-        <Home id={'home'} ref={(el) => {sectionRefs.current['home']= el}}/>
+        <Home id='home' ref={(el) => {sectionRefs.current['home']= el}}/>
         <About id='about' ref={(el) => {sectionRefs.current['about']= el}}/>
         <Skills id='skills' ref={(el) => {sectionRefs.current['skills']= el}}/>
+        <ProjectSection id='projects' ref={(el) => {sectionRefs.current['projects']= el}} />
         <Contact id='contact' ref={(el) => {sectionRefs.current['contact']= el}}/>
         <Footer />
       </main>

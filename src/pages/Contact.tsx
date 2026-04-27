@@ -65,6 +65,7 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
         toast.success("Copied!");
     }
 
+
     return (
         <section 
             id={id} ref={ref}
@@ -72,14 +73,14 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
         >
            <div className="max-w-250 h-auto mx-auto relative">
              <header className="text-center mb-14 text-xl font-bold">
-                <h3 className='font-bold font-black bg-gradient-to-b from-main to-slate-200 bg-clip-text text-transparent'>Contact Me</h3>
+                <h3 className='font-black bg-linear-to-b from-main to-slate-200 bg-clip-text text-transparent'>Contact Me</h3>
                 <p className="text-main">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
             </header>
             
-            <div className="w-fit mx-auto h-auto grid grid-cols-1 md:grid-cols-2 xl:gap-x-30 gap-y-10 md:gap-x-10 lg:gap-x-20 text-main px-2 sm:px-7 md:px-0">
+            <div className="w-fit mx-auto h-auto grid grid-cols-1 md:grid-cols-2 xl:gap-x-30 gap-y-10 md:gap-x-20 lg:gap-x-20 text-main px-2 sm:px-7 md:px-0">
                 <div className="max-w-100 grid-self-center md:w-full flex flex-col justify-center">
                     <div className="w-full"> 
-                        <h4 className="font-bold text-xl mb-5 font-black text-shadow-[0_0_4px_rgba(255,255,255,0.3)] bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Get in touch!</h4>
+                        <h4 className="text-xl mb-5 font-black text-shadow bg-linear-to-r from-secondary to-accent bg-clip-text text-transparent">Get in touch!</h4>
                         <p className="text-lg">
                             I'm currently open to work opportunities as a Frontend Developer. 
                             If you're looking for someone passionate about building responsive and user-friendly websites, feel free to reach out.
@@ -88,7 +89,7 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                         <div className="my-2 mt-6">
                             <Toaster position="top-center" />
                             <label className="me-2">
-                                    <FontAwesomeIcon icon={faEnvelope} className="hover:text-secondary hover:translate-y-[-4px] text-xl text-main text-shadow-[0_0_4px_rgba(var(--accent))]"/>
+                                    <FontAwesomeIcon icon={faEnvelope} className="hover:text-secondary hover:-translate-2 text-xl text-main text-shadow-glow"/>
                                     <span className="text-2xl ms-1 text-main">:</span>
                             </label>
                             <span 
@@ -101,7 +102,7 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                     
                         <div className="mt-1">
                             <label className="me-2">
-                                    <FontAwesomeIcon icon={faPhone} className="hover:text-secondary hover:translate-y-[-4px] text-xl text-main text-shadow-[0_0_4px_rgba(var(--accent))]"/>
+                                    <FontAwesomeIcon icon={faPhone} className="hover:text-secondary hover:-translate-2 text-xl text-main text-shadow-glow"/>
                                     <span className="text-2xl ms-1 text-main">:</span>
                             </label>
                             <span 
@@ -115,15 +116,16 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                 </div>
 
 
-                <div className="max-w-100 grid-self-center md:w-full flex justify-center items-center">
+                <div 
+                className="max-w-100 grid-self-center md:w-full flex justify-center items-center relative">
                     <form 
                         ref={form} 
                         onSubmit={sendEmail}
-                        className="w-full bg-white/8 backdrop-blur-xl backdrop-saturate-150 rounded-2xl shadow-2xl border border-white/10 flex flex-col gap-2 py-4 px-6" 
+                        className="w-full opacity-80 bg-bg/20 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 flex flex-col gap-2 py-4 px-6 z-10 hover:-translate-2 transition-all duration-100" 
                     >
                         {/* Header Section */}
                         <div className="mb-2">
-                            <h4 className="font-bold text-main font-black text-shadow-[0_0_4px_rgba(255,255,255,0.3)]">Work with me!</h4>
+                            <h4 className="text-main font-black text-shadow-[0_0_4px_rgba(255,255,255,0.3)]">Work with me!</h4>
                             <p className="text-sm text-muted mt-1">Collaboration is the key to success. Drop your message and let’s start our journey!</p>
                         </div>
 
@@ -139,7 +141,7 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                                 className="peer w-full p-2 rounded-xl border border-muted/50 bg-bg text-muted focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
                                 required
                             />
-                            <label className="absolute rounded-md left-4 top-2 text-gray-500 transition-all duration-200 pointer-events-none
+                            <label className="absolute rounded-md left-4 top-2 transition-all duration-200 pointer-events-none
                                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2
                                             peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 dark:peer-focus:text-blue-400
                                             peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs
@@ -158,7 +160,7 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                                 className="peer w-full p-2 rounded-xl border border-muted/50 bg-bg text-muted focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
                                 required
                             />
-                            <label className="absolute rounded-md left-4 top-2 text-gray-500 transition-all duration-200 pointer-events-none
+                            <label className="absolute rounded-md left-4 top-2 transition-all duration-200 pointer-events-none
                                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2
                                             peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 dark:peer-focus:text-blue-400
                                             peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs
@@ -174,11 +176,11 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
                                 onChange={(e) => setMessage(e.target.value)}
                                 value={message}
                                 placeholder=" " // Important: Must be a space for floating label to work
-                                className="peer w-full p-2 rounded-xl border border-muted/50 bg-bg text-muted focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all resize-none min-h-[120px]"
+                                className="peer w-full p-2 rounded-xl border border-muted/50 bg-bg text-muted focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all resize-none min-h-"
                                 required
                                 rows={4}
                             />
-                            <label className="absolute rounded-md left-2 top-4 text-gray-500 transition-all duration-200 pointer-events-none
+                            <label className="absolute rounded-md left-2 top-4 transition-all duration-200 pointer-events-none
                                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2
                                             peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 dark:peer-focus:text-blue-400
                                             peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs
@@ -221,22 +223,22 @@ const Contact= forwardRef<HTMLElement, ContactProps>(({id}, ref) => {
             </div>
 
             <footer className="w-full mt-16 flex justify-center gap-2">
-                     <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
+                     <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:-translate-y-2'>
                         <a href="https://github.com/kyawzin17" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#f21b24]' />
                         </a>
                     </button>
-                     <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
+                     <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:-translate-y-2'>
                         <a href="https://facebook.com/reddragon1766" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faFacebook} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#3b569d]' />
                         </a>
                     </button>
-                    <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
+                    <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:-translate-y-2'>
                         <a href="https://t.me/@kyawzinwinei" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faTelegram} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#007bff]' />
                         </a>
                     </button>
-                    <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:translate-y-[-8px]'>
+                    <button className='p-1 rounded-md bg-transparent transition-all duration-200 ease-linear hover:-translate-y-2'>
                         <a href="viber://chat?number=%2B959674114295" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faViber} className='text-main font-bold text-2xl transition-all duration-200 ease-linear hover:text-[#665ca7]' />
                         </a>
